@@ -1,0 +1,44 @@
+.categories {
+  padding: 5rem 0;
+
+  h2 {
+    text-align: center;
+    padding: 5rem 0;
+  }
+  .categories__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    .categories__card {
+      transition: 0.2s ease-in-out;
+      max-height: 35rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: $font-segoe;
+        padding: 2rem 0;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* ============== 600PX QUERIES ================ */
+@media screen and (max-width: 600px) {
+  .categories {
+    .categories__box {
+      grid-template-columns: 1fr;
+      gap: 10rem;
+    }
+  }
+}

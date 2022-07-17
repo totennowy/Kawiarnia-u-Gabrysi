@@ -1,0 +1,200 @@
+header {
+  height: 70rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9500175070028011) 0%,
+      rgba(0, 0, 0, 0.8015581232492998) 20%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.644) 60%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url(assets/coffee-g741ef407d_1920.jpg);
+  background-position: 50% 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .hamburger {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 4rem;
+    height: 3rem;
+    background: transparent;
+
+    div {
+      width: 35px;
+      height: 6px;
+      background: $basic-white;
+      position: absolute;
+      top: 9px;
+      border-radius: 2rem;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 35px;
+      height: 6px;
+      background: $basic-white;
+      border-radius: 2rem;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 0px;
+      width: 35px;
+      height: 6px;
+      background: $basic-white;
+      border-radius: 2rem;
+    }
+  }
+
+  .clicked {
+    div,
+    &:before,
+    &:after {
+      background: $brown;
+    }
+  }
+
+  h1 {
+    text-align: right;
+    padding-bottom: 3rem;
+  }
+
+  nav {
+    ul {
+      padding: 3rem 0;
+      display: flex;
+
+      li a {
+        color: $basic-white;
+        font-size: 3rem;
+        position: relative;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          color: $brown;
+        }
+      }
+
+      li:nth-child(1) {
+        width: 12%;
+        font-family: $font-segoe;
+      }
+      li:nth-child(2) {
+        width: 38%;
+        font-family: $font-segoe;
+      }
+      li:nth-child(3) {
+        width: 38%;
+        text-align: right;
+        font-family: $font-segoe;
+      }
+      li:nth-child(4) {
+        width: 12%;
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* ============== 1200PX QUERIES ================ */
+@media screen and (max-width: 1200px) {
+  header {
+    nav {
+      ul {
+        li:nth-child(1) {
+          width: 20%;
+          font-family: $font-segoe;
+        }
+        li:nth-child(2) {
+          width: 30%;
+          font-family: $font-segoe;
+        }
+        li:nth-child(3) {
+          width: 30%;
+          text-align: right;
+          font-family: $font-segoe;
+        }
+        li:nth-child(4) {
+          width: 20%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+/* ============== 800PX QUERIES ================ */
+@media screen and (max-width: 800px) {
+  header {
+    nav {
+      ul {
+        li {
+          text-align: center;
+        }
+        li:nth-child(1) {
+          width: 25%;
+          font-family: $font-segoe;
+        }
+        li:nth-child(2) {
+          width: 25%;
+          font-family: $font-segoe;
+        }
+        li:nth-child(3) {
+          width: 25%;
+          text-align: center;
+          font-family: $font-segoe;
+        }
+        li:nth-child(4) {
+          width: 25%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* ============== 600PX QUERIES ================ */
+@media screen and (max-width: 600px) {
+  header {
+    background-position: 40% 40%;
+    background-size: cover;
+    height: 60rem;
+    h1 {
+      width: 100%;
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    nav {
+      .nav__ul {
+        display: none;
+
+        li {
+          text-align: center;
+        }
+      }
+      .active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.199);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 2;
+      }
+    }
+  }
+}

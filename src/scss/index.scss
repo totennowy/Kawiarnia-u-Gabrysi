@@ -1,0 +1,58 @@
+@import "./resets";
+@import "./variables";
+@import "../components/header/header";
+@import "../components/about/about";
+@import "../components/categories/categories";
+@import "../components/gallery/gallery";
+@import "../components/footer/footer";
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+.container {
+  width: 84%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: $basic-white;
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+
+h2 {
+  color: $brown;
+  font-size: 3.6rem;
+  font-weight: 900;
+}
+
+img {
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.979);
+  }
+}
+
+/* ============== 1000PX QUERIES ================ */
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 92%;
+  }
+}
+
+/* ============== 600PX QUERIES ================ */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 96%;
+  }
+}
